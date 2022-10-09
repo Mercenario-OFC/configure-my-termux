@@ -7,7 +7,7 @@ white='\e[1;37m'
 yellow='\e[1;33m'
 
 
-#distro="
+distro="
 ..............
             ..,;:ccc,.
           ......''';lxO.
