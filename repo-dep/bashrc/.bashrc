@@ -2,8 +2,10 @@
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-PS1='\[\033[01;34m\]┌──\[\033[01;34m\](\[\033[01;34m\]\[\033[01;31m\]kali\[\033[01;34m\]㉿\[\033[01;31m\]kali\[\033[01;34m\])\[\033[01;34m\]-\[\033[01;34m\][\[\033[01;33m\]\w\]\[\033[01;34m\]]
-\[\033[01;34m\]└─\[\033[01;32m\]$\[\033[01;31m\] '
+fake_user="Mercenario"
+
+PS1='\[\033[01;31m\]┌─\[\033[01;34m\][\[\e[1;34m\]\[\033[01;32m\]${faker_user}\e[0m\]\[\033[01;34m\]]\[\033[01;31m\]-\e[0m\]\[\033[01;34m\][\[\e[01;33m\]\t\e[0m\]\[\033[01;34m\]]\[\033[01;31m\]
+┃\n\[\033[01;31m\]└─\[\033[01;34m\][\[\033[01;32m\]${PWD/*\//}\[\033[01;34m\]]\[\033[01;31m\]-\[\033[01;34m\]}\[\033[01;36m\] '
 
 # Não armazenar as linhas duplicadas ou linhas que começam com espaço no historico.
 HISTCONTROL=ignoreboth
