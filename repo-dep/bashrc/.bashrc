@@ -2,6 +2,9 @@
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
+PS1='\[\033[01;34m\]┌──\[\033[01;34m\](\[\033[01;34m\]\[\033[01;31m\]kali\[\033[01;34m\]㉿\[\033[01;31m\]kali\[\033[01;34m\])\[\033[01;34m\]-\[\033[01;34m\][\[\033[01;33m\]\w\]\[\033[01;34m\]]
+\[\033[01;34m\]└─\[\033[01;32m\]$\[\033[01;31m\] '
+
 # Não armazenar as linhas duplicadas ou linhas que começam com espaço no historico.
 HISTCONTROL=ignoreboth
 
@@ -39,12 +42,6 @@ alias aptrepair='apt -f install'
 
 # Reparar o dpkg
 alias dpkgrepair='sudo dpkg --configure -a'
-
-# atualizar o apt
-alias upd='pkg update -y'
-
-#Meck aliases
-alias meck='nala'
 
 # Confirme antes de substituir
 alias cp="cp -i"
