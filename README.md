@@ -13,6 +13,8 @@
 ```bash
 $ git clone https://github.com/Mercenario-OFC/configure-my-termux.git
 ```
+##
+
 <details open>
   <summary><strong>Dependencias</strong></summary>
 
@@ -20,6 +22,8 @@ $ git clone https://github.com/Mercenario-OFC/configure-my-termux.git
 - pkg install ****
 
 </details>
+
+##
 
 ### formas de uso:
 
