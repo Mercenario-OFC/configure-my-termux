@@ -2,49 +2,6 @@
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-red='\e[1;31m'
-green='\e[1;32m'
-blue='\e[1;34m'
-purple='\e[1;35m'
-icyan='\e[1;36m'
-white='\e[1;37m'
-yellow='\e[1;33m'
-
-
-distro="
-..............
-            ..,;:ccc,.
-          ......''';lxO.
-.....''''..........,:ld;
-           .';;;:::;,,.x,
-      ..'''.            0Xxoc:,.  ...
-  ....                ,ONkc;,;cokOdc',.
-.                   OMo           ':ddo.
-                    dMc               :OO;
-                    0M.                 .:o.
-                    ;Wd
-                     ;XO,
-                       ,d0Odlc;,..
-                           ..',;:cdOOd::,.
-                                    .:d;.':;.
-                                       'd,  .'
-                                         ;l   ..
-                                          .o
-                                            c
-                                            .'
-                                             .
-" 
-
-paste <(printf "%s" "$distro") | lolcat
-echo -e "            ${green}⧏${red}=================${yellow}======${yellow}============${red}=================${green}⧐"
-echo
-echo -e ${red}"---------------------------------${icyan}{ Termux }${red}------------------------------"
-echo
-echo -e "            ${green}⧏${red}=================${yellow}======${yellow}============${red}=================${green}⧐"
-echo
-PS1='\[\033[01;31m\]┌─\[\033[01;34m\][\[\e[1;34m\]\[\033[01;32m\]Mercenario\e[0m\]\[\033[01;34m\]]\[\033[01;31m\]-\e[0m\]\[\033[01;34m\][\[\e[01;33m\]\t\e[0m\]\[\033[01;34m\]]\[\033[01;31m\]
-┃\n\[\033[01;31m\]└─\[\033[01;34m\][\[\033[01;32m\]${PWD/*\//}\[\033[01;34m\]]\[\033[01;31m\]-\[\033[01;34m\]}\[\033[01;36m\] '
-
 # Não armazenar as linhas duplicadas ou linhas que começam com espaço no historico.
 HISTCONTROL=ignoreboth
 
