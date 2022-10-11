@@ -1,3 +1,5 @@
+> **Em desenvolvimento**
+##
 ### Description
 > um script simples para personalizar o meu termux.
 ##
