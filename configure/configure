@@ -1,1 +1,58 @@
 
+#!/usr/bin/env bash
+
+#--------------------------------- VARIÁVEIS ---------------------------------->
+fecha="\033[m"
+verde="\033[32;1m"
+vermelho="\033[31;1m"
+branco="\033[37;1m"
+
+# download do arquivo .bashrc
+download_bashrc="https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bashrc/.bashrc"
+##############################################
+
+# funcão de ajuda
+function dicas(){ msg "test"; }
+##############################################
+
+# deleta os arquivos .bash/bash.bashrc duplicados
+dia_de_limpeza="rm -rf ~/configure/repo-dep/.**"
+##############################################
+
+# download do arquivo .bashrc #bloco-09
+download_bashrc="https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bashrc/.bashrc"
+# diretorios
+diretorio_origem="/data/data/com.termux/files/home/configure/repo-dep/.bashrc"diretorio_destino="${HOME}/.bashrc"
+##############################################
+
+
+#------------------------------- FIM-VARIÁVEIS --------------------------------<
+
+
+#----------------------------------- FUNÇÕES ---------------------------------->
+msg(){ echo -e "$*" >&2; }
+
+# faz o download do arquivo .bashrc
+function down_bashrc(){ wget -P repo-dep/ ${download_bashrc} > /dev/null 2>&1; }
+
+_install(){
+
+if [ -f "${HOME}/.bashrc" ]; then
+    down_bashrc
+    msg "download completo"
+    ${dia_de_limpeza}
+    mv ${diretorio_origem} ${diretorio_destino}
+else
+    mkdir -v "${HOME}/.bashrc" && _install
+fi
+
+}
+#--------------------------------- FIM-FUNÇÕES --------------------------------<
+
+# Script começa aqui :)
+opcao="$1"
+case "$opcao" in
+-i|--install) _install ;; # Chamada Função.
+-b|--backup) msg "backup" ;; # Chamada Função.
+ *) dicas
+esac
