@@ -9,7 +9,7 @@
 
 ### clone o repositorio
 ```bash
-$ git clone 
+$ git clone https://github.com/Mercenario-OFC/configure-my-termux.git
 ```
 <details open>
   <summary><strong>Dependencias</strong></summary>
@@ -21,4 +21,4 @@ $ git clone
 
 ### formas de uso:
 
-> ** Test **
+> **./configure -i ou bash configure --install**
