@@ -52,6 +52,36 @@ alias clone='git clone'
 ## utilitarios
 alias proxy='proxychains4 $1 2>/dev/null'
 
+#  comandos comuns
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias lm='ls | more'
+alias ll='ls -lFh'
+alias la='ls -alFh --group-directories-first'
+alias l1='ls -1F --group-directories-first'
+alias l1m='ls -1F --group-directories-first | more'
+alias lh='ls -ld .??*'
+alias lsn='ls | cat -n'
+alias mkdir='mkdir -p -v'
+alias cp='cp --preserve=all'
+alias cpv='cp --preserve=all -v'
+alias cpr='cp --preserve=all -R'
+alias cpp='rsync -ahW --info=progress2'
+alias cs='printf "\033c"'
+alias q='exit'
+
+# memoria/CPU
+alias df='df -Tha --total'
+alias free='free -mt'
+alias ps='ps auxf'
+alias ht='htop'
+alias cputemp='sensors | grep Core'
+
+# tornar menos amigável para arquivos de entrada não-texto, veja lesspipe
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/bash lesspipe)"
+
 ## tor check
 tcheck(){
 curl --socks5-hostname localhost:9050 -s https://check.torproject.org &> /dev/null && echo "Tor conectado" || echo "Tor nao esta conectado"
@@ -66,6 +96,7 @@ command_not_found_handle() {
 
 # Netcat-based command line pastebin. 
  alias tb='ncat termbin.com 9999'
+ 
 # cd multiple levels down
 # usage: cdn <number>
 function cdn() {
