@@ -1,4 +1,50 @@
+red='\e[1;31m'
+green='\e[1;32m'
+blue='\e[1;34m'
+purple='\e[1;35m'
+icyan='\e[1;36m'
+white='\e[1;37m'
+yellow='\e[1;33m' 
 
+
+distro="
+..............
+            ..,;:ccc,.
+          ......''';lxO.
+.....''''..........,:ld;
+           .';;;:::;,,.x,
+      ..'''.            0Xxoc:,.  ...
+  ....                ,ONkc;,;cokOdc',.
+.                   OMo           ':ddo.
+                    dMc               :OO;
+                    0M.                 .:o.
+                    ;Wd
+                     ;XO,
+                       ,d0Odlc;,..
+                           ..',;:cdOOd::,.
+                                    .:d;.':;.
+                                       'd,  .'
+                                         ;l   ..
+                                          .o
+                                            c
+                                            .'
+                                             .
+" 
+
+paste <(printf "%s" "$distro") | lolcat 
+
+echo -e "            ${green}⧏${red}=================${yellow}======${yellow}============${red}=================${green}⧐"
+echo
+echo -e ${red}"---------------------------------${icyan}{ Termux }${red}------------------------------"
+echo
+echo -e "            ${green}⧏${red}=================${yellow}======${yellow}============${red}=================${green}⧐"
+echo
+PS1='\[\033[01;31m\]┌─\[\033[01;34m\][\[\e[1;34m\]\[\033[01;32m\]Mercenario\e[0m\]\[\033[01;34m\]]\[\033[01;31m\]-\e[0m\]\[\033[01;34m\][\[\e[01;33m\]\t\e[0m\]\[\033[01;34m\]]\[\033[01;31m\]
+┃\n\[\033[01;31m\]└─\[\033[01;34m\][\[\033[01;32m\]${PWD/*\//}\[\033[01;34m\]]\[\033[01;31m\]-\[\033[01;34m\]}\[\033[01;36m\] '
+
+#=-----------------------------------------=
+
+"
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
@@ -141,4 +187,5 @@ ex ()
   else
     echo "'$1' não é um arquivo válido"
   fi
-}
+}"
+ https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bashrc/.bashrc#:~:text=%5B%5B%20%24PS1%20%26%26%20%2Df%20/usr,arquivo%20v%C3%A1lido%22%0A%20%20fi%0A%7D
