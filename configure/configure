@@ -1,58 +1,47 @@
-
 #!/usr/bin/env bash
 
 #--------------------------------- VARIÁVEIS ---------------------------------->
-fecha="\033[m"
-verde="\033[32;1m"
-vermelho="\033[31;1m"
-branco="\033[37;1m"
-
-# download do arquivo .bashrc
-download_bashrc="https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bashrc/.bashrc"
-##############################################
-
-# funcão de ajuda
-function dicas(){ msg "test"; }
-##############################################
-
-# deleta os arquivos .bash/bash.bashrc duplicados
-dia_de_limpeza="rm -rf ~/configure/repo-dep/.**"
-##############################################
-
-# download do arquivo .bashrc #bloco-09
-download_bashrc="https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bashrc/.bashrc"
-# diretorios
-diretorio_origem="/data/data/com.termux/files/home/configure/repo-dep/.bashrc"diretorio_destino="${HOME}/.bashrc"
-##############################################
+reset="\033[m"
+green="\033[32;1m"
+red="\033[31;1m"
+white="\033[37;1m"
 
 
+ download_bash_bashrc="https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bash.bashrc/bash.bashrc"
+
+ download_bashrc="https://raw.githubusercontent.com/Mercenario-OFC/configure-my-termux/main/repo-dep/bashrc/.bashrc"
+function dicas(){
+msg "test"
+}
+
+diretorio_origem="/data/data/com.termux/files/home/configure/repo-dep/bash.bashrc"
+diretorio_destino="/data/data/com.termux/files/usr/etc"
 #------------------------------- FIM-VARIÁVEIS --------------------------------<
 
 
 #----------------------------------- FUNÇÕES ---------------------------------->
-msg(){ echo -e "$*" >&2; }
+msg(){ echo "$*" >&2; }
 
-# faz o download do arquivo .bashrc
-function down_bashrc(){ wget -P repo-dep/ ${download_bashrc} > /dev/null 2>&1; }
+# faz o download do arquivo .bashrc e bash.bashrc
+function bash.bashrc(){ wget -P repo-dep/ ${download_bash_bashrc} ${download_bashrc} > /dev/null 2>&1; }
 
-_install(){
-
-if [ -f "${HOME}/.bashrc" ]; then
-    down_bashrc
+function _install(){
+# executando a funcao: bash.bashrc
+    bash.bashrc
     msg "download completo"
-    ${dia_de_limpeza}
+#clear
+    rm -rf ~/configure/repo-dep/.**
+    msg "arquivos duplicados foram removidos da pasta: configure/repo-dep"; #clear
+    msg "antes do erro aqui"
     mv ${diretorio_origem} ${diretorio_destino}
-else
-    mkdir -v "${HOME}/.bashrc" && _install
-fi
+
 
 }
 #--------------------------------- FIM-FUNÇÕES --------------------------------<
 
-# Script começa aqui :)
 opcao="$1"
 case "$opcao" in
--i|--install) _install ;; # Chamada Função.
--b|--backup) msg "backup" ;; # Chamada Função.
+"-i"|--install) _install ;;
+"-b"|--backup) msg "backup" ;;
  *) dicas
 esac
